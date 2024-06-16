@@ -1,8 +1,11 @@
-import './App.css';
+import Body from './components/Body';
+import Browse from './components/Browse';
 
 function App() {
   return (
-    <div className='text-3xl font-bold text-green-600'>Wassssupppppp!!!!</div>
+    <div>
+      <Body />
+    </div>
   );
 }
 
