@@ -9,9 +9,27 @@ export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZDYwNDBjOGZhNThhMTc5M2UzMDdmNGJmNTEwODc1ZSIsIm5iZiI6MTcxOTA3MTA3OS45NzI4OTEsInN1YiI6IjY2NzZlZDViM2ZkYWQxMDhiZmIwOTVjMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.UFbp7ueqVK-ZKsJc15owN9dBJzrdOTT9yIpXYg0y88s',
+    Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
 export const IMG_CDN_URL = 'https://image.tmdb.org/t/p/w780';
+export const SUPPORTED_LANGUAGES = [
+  { identifier: 'en', name: 'English' },
+  { identifier: 'hindi', name: 'Hindi' },
+  { identifier: 'german', name: 'German' },
+];
+
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+
+export const gptResponse = [
+  {
+    finish_reason: 'stop',
+    index: 0,
+    message: {
+      content:
+        "Thank you for your query, this search don't work for free users",
+      role: 'assistant',
+    },
+  },
+];
