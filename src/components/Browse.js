@@ -24,16 +24,18 @@ const Browse = () => {
   useTopRatedMovies();
   useUpcomingMovies();
   return (
-    <div>
+    <div className='flex flex-col min-h-screen'>
       <Header />
-      {showGPTSearch ? (
-        <GptSearch />
-      ) : (
-        <>
-          <MainContainer />
-          <SecondaryContainer />
-        </>
-      )}
+      <div className='flex-grow'>
+        {showGPTSearch ? (
+          <GptSearch />
+        ) : (
+          <>
+            <MainContainer />
+            <SecondaryContainer />
+          </>
+        )}
+      </div>
       <Footer />
       <ModalWrapper />
     </div>
