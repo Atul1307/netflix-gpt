@@ -4,7 +4,7 @@ export const checkValidData = (userName, email, password) => {
   );
   const isPasswordValid =
     /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
-  const isUserNameValid = /^[A-Za-z][A-Za-z0-9_]{7,29}$/.test(userName);
+  const isUserNameValid = /^[a-zA-Z0-9]+$/.test(userName);
 
   if (userName !== null && !isUserNameValid)
     return 'Please enter a valid user name';

@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+Already implemented features(post netflix clone):
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Updated Logo
+- Updated background image
+- Updated signup/sign in text link
+- updated colors of buttons
+- Add helper for singup wrt username and password to give
+- Background of logged in page and search page
+- Colors of logged in pages
+- Clicking play button switches to full screen.
+- More info and less info feature
+- Text truncation with ellipsis
+- Clicking on any card should play the trailer -> make the trailer play completely on top of the screen and not just append to under the card as it is happening now.
+- Figure out how to play the trailer of the movie we clicked on as currently we were fetching trailer from redux store which does not seem to be ideal. Research more on this.
+- Figure out full screen and full window thing and also sound thing
+- Added a clear button in search bar to clear search text and that triggers to remove movies card as well.
+- Moving away from search page unmounts the movies card as well.
+- Close button when we open movie trailer
+- If I open any other trailer then background trailer also changes. Fix this bug.
+- Background video should keep playing in loop
+- Dropped the autocomplete thing and instead using showing search results in the card row.
+- Caching of searched results.
+- If autocomplete then throttling/debouncing
+- Caching of redux calls.
+- Alerady cached results are not getting shown in the card -> Bug/missing feature.
+- Add an example for password helper
+- Hovering over any card should show enlarged card -> complete the styles.
+- When I keep tabing then it doesn't scroll, instead it goes out of the page.
+- Add accessibility for youtube video which opens on play button as well. And add keyDown thing here too.
+- Add enter(onKeyDown) capability on all the clickable elements.
+- Accessibility
+- Remove my image from user avatar -> It is only for my user, for other users I am giving netflix wala user icon
+- Logo correction with correct color and making it eye catching
+- Add a footer
 
-## Available Scripts
+Next :
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Responsiveness -> Mostly it is done, but verify a bit more.
+- Git push

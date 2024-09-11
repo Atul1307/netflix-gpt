@@ -7,6 +7,7 @@ import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO, SUPPORTED_LANGUAGES } from '../utils/constants';
 import { toggleGptSearchView } from '../utils/gptSlice';
 import { changeLanguage } from '../utils/configSlice';
+import logoImg from '../utils/images/TrailerFlix_Final-Logo.png';
 
 const Header = () => {
   const showGPTSearch = useSelector((store) => store.gpt.showGptSearch);
@@ -52,29 +53,38 @@ const Header = () => {
 
   return (
     <div className='absolute px-8 py-2 w-screen bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between'>
-      <img className='w-48 mx-auto md:mx-0' src={LOGO} alt='logo' />
+      <img
+        className='w-72 mx-auto md:mx-2 my-2 bg-transparent'
+        src={logoImg}
+        alt='logo'
+      />
       {user && (
         <div className='flex md:p-2 justify-between'>
           {showGPTSearch && (
             <select
-              className='py-2 px-4 mx-4 my-2 mr-1 bg-violet-400 text-white rounded-lg'
+              className='py-2 px-4 mx-4 my-2 mr-1 bg-[#1DB9C3] text-white rounded-lg'
               onChange={handlePageLanguage}
+              aria-label='Dropdown to change language'
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
-                <option key={lang.identifier} value={lang.identifier}>
+                <option
+                  key={lang.identifier}
+                  value={lang.identifier}
+                  aria-label={lang.name}
+                >
                   {lang.name}
                 </option>
               ))}
             </select>
           )}
           <button
-            className='py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg'
+            className='py-2 px-4 mx-4 my-2 bg-[#1DB9C3] text-white rounded-lg'
             onClick={handleGptSearchClick}
           >
             {showGPTSearch ? 'Homepage' : 'Search'}
           </button>
           <img
-            className='hidden md:block mx-4 my-2 ml-1 w-10 h-12'
+            className='hidden md:block mx-4 my-2 ml-1 w-10 h-12 rounded-full'
             src={user?.photoURL}
             alt='logo'
           />

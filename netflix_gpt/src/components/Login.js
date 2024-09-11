@@ -9,7 +9,8 @@ import {
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
-import { PAGE_BACKGROUND, USER_AVATAR } from '../utils/constants';
+import { USER_AVATAR } from '../utils/constants';
+import bgImage from '../utils/images/background_img.png';
 
 const Login = () => {
   const [signInForm, setSignInForm] = useState(true);
@@ -93,49 +94,110 @@ const Login = () => {
       <Header />
       <div className='absolute'>
         <img
-          className='h-screen object-cover md:h-auto'
-          src={PAGE_BACKGROUND}
+          className='h-screen object-cover md:h-screen md:w-screen'
+          src={bgImage}
           alt='logo'
         />
       </div>
       <form
-        className='absolute p-12 bg-black w-full md:w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'
+        className='absolute p-10 bg-black w-full md:w-3/12 my-64 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80'
         onSubmit={(e) => e.preventDefault()}
       >
-        <h1 className='py-2 font-bold text-3xl'>
+        <h1 className='py-1 font-bold text-3xl'>
           {signInForm ? 'Sign in' : 'Sign up'}
         </h1>
         {!signInForm && (
-          <input
-            ref={userName}
-            type='text'
-            placeholder='Enter your name'
-            className='p-2 my-4 w-full bg-gray-700 rounded-lg'
-          />
+          <>
+            <input
+              ref={userName}
+              type='text'
+              placeholder='Enter your username'
+              className='p-2 mt-3 mb-2 w-full bg-gray-700 rounded-lg'
+              aria-label='Enter your username'
+            />
+            <small
+              class='text-gray-500'
+              aria-label='Your username must conainer only letters and number'
+            >
+              must contain only letters and numbers.
+            </small>
+          </>
         )}
         <input
           ref={email}
           type='text'
           placeholder='Email address'
-          className='p-2 my-4 w-full bg-gray-700 rounded-lg'
+          className='p-2 mt-3 mb-2 w-full bg-gray-700 rounded-lg'
+          aria-label='Enter your email address'
         ></input>
+        {!signInForm && (
+          <small class='text-gray-500' aria-label='Example - user@example.com'>
+            e.g., user@example.com.
+          </small>
+        )}
         <input
           ref={password}
           type='password'
           placeholder='Password'
-          className='p-2 my-4 w-full bg-gray-700 rounded-lg'
+          className='p-2 mt-3 mb-2 w-full bg-gray-700 rounded-lg'
+          aria-label='password'
         ></input>
+        {!signInForm && (
+          <small
+            class='text-gray-500'
+            aria-label='Your password must be at least 8 characters, at least one uppercase letter, one lowercase
+            letter, and one number. Ex : Password1, StrongPass123'
+          >
+            at least 8 characters, at least one uppercase letter, one lowercase
+            letter, and one number. Ex : Password1, StrongPass123
+          </small>
+        )}
         <p className='text-red-600 font-bold py-2'>{errorMessage}</p>
         <button
-          className='p-4 my-6 bg-red-700 w-full rounded-lg'
+          className='p-3 my-2 bg-[#1DB9C3] w-full rounded-lg'
           onClick={handleButtonClick}
+          aria-label={signInForm ? 'Click to sign in' : 'Click to sign up'}
         >
           {signInForm ? 'Sign in' : 'Sign up'}
         </button>
         <p className='py-4' onClick={toggleSignInForm}>
-          {signInForm
-            ? 'New to netflix-gpt? Sign up now!'
-            : 'Already a user? Sign in now!'}
+          {signInForm ? (
+            <>
+              New to TrailerFlix?
+              <span
+                className='text-[#1DB9C3] cursor-pointer'
+                tabIndex={0}
+                aria-label='New to TrailerFlix? Click here to sign up!'
+                role='button'
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    toggleSignInForm();
+                  }
+                }}
+              >
+                {' '}
+                Sign up now!
+              </span>
+            </>
+          ) : (
+            <>
+              Already a user?
+              <span
+                className='text-[#1DB9C3] cursor-pointer'
+                tabIndex={0}
+                aria-label='Already a user? Click here to sign in!'
+                role='button'
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    toggleSignInForm();
+                  }
+                }}
+              >
+                {' '}
+                Sign in now!
+              </span>
+            </>
+          )}
         </p>
       </form>
     </div>
