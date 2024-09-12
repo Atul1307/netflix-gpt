@@ -6,8 +6,8 @@ const VideoPopover = React.memo(({ isOpen, onClose }) => {
   const movie_id = useSelector((store) => store.modal.movieID);
   const trailerVideo = useSelector((store) => store.modal.trailerVideo);
 
-  useCardMovieTrailer(movie_id);
   const isLoading = useSelector((store) => store.modal.isLoading);
+  useCardMovieTrailer(movie_id);
 
   if (!isOpen) return null;
 
@@ -38,7 +38,7 @@ const VideoPopover = React.memo(({ isOpen, onClose }) => {
           <div className='flex justify-center items-center h-full'>
             <span className='text-lg bg-white'>Loading...</span>
           </div>
-        ) : (
+        ) : trailerVideo ? (
           <div aria-hidden='true' tabIndex={-1} className='w-full h-full'>
             <iframe
               className='w-full h-full'
@@ -50,8 +50,12 @@ const VideoPopover = React.memo(({ isOpen, onClose }) => {
               }
               title='YouTube video player'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              referrerpolicy='strict-origin-when-cross-origin'
+              referrerPolicy='strict-origin-when-cross-origin'
             ></iframe>
+          </div>
+        ) : (
+          <div className='flex justify-center items-center h-full'>
+            <span className='text-lg bg-white'>No trailer available</span>
           </div>
         )}
       </div>
