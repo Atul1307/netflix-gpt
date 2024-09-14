@@ -15,7 +15,7 @@ const MovieCard = ({ title, id, posterPath }) => {
   if (!posterPath) return null;
 
   return (
-    <div className='relative w-36 md:w-44 pr-4 cursor-pointer transition-transform duration-300 hover:scale-125 hover:-translate-y-4 hover:z-50'>
+    <div className='relative w-36 md:w-44 pr-4 cursor-pointer sm:transition-transform sm:duration-300 sm:hover:scale-125 sm:hover:-translate-y-4 sm:hover:z-50'>
       <div
         className='focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50'
         onClick={() => updateStore()}

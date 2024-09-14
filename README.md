@@ -32,8 +32,8 @@ Already implemented features(post netflix clone):
 - Remove my image from user avatar -> It is only for my user, for other users I am giving netflix wala user icon
 - Logo correction with correct color and making it eye catching
 - Add a footer
+- Responsiveness -> Login form is bit down in small screens and mobiles too.
+- No hover on cards in mobile.
+- Git push
 
 Next :
-
-- Responsiveness -> Mostly it is done, but verify a bit more.
-- Git push
